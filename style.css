@@ -123,78 +123,31 @@
     margin-left:auto; margin-right:auto; line-height:1.6;
   }
 
-  /* LETTERS */
-  .letters{ display:flex; flex-direction:column; gap:1.1rem; }
-  .letter{
-    background:var(--ivory-2);
-    border:1px solid color-mix(in srgb, var(--rose) 45%, transparent);
-    border-radius:2px;
-    padding:1.5rem 1.6rem;
-    cursor:pointer;
-    position:relative;
-    transition:background .3s ease;
+
+  /* STATEMENT */
+  .statement{
+    padding:3rem 1.5rem 5rem;
+    display:flex; justify-content:center; align-items:center;
+    text-align:center;
   }
-  .letter-head{
-    display:flex; align-items:center; justify-content:space-between;
-    font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--wine);
-    font-size:1.15rem;
-  }
-  .letter-head .mark{ color:var(--gold); font-size:1.1rem; transition:transform .35s ease; }
-  .letter.open .mark{ transform:rotate(180deg); }
-  .letter-body{
-    max-height:0; overflow:hidden; transition:max-height .5s ease, margin-top .5s ease;
-    font-size:1rem; line-height:1.75; color:var(--ink);
-  }
-  .letter.open .letter-body{ max-height:400px; margin-top:1rem; }
-  .letter-body .sign{
-    display:block; margin-top:.9rem; font-family:'Cormorant Garamond', serif;
-    font-style:italic; color:var(--rose);
+  .statement-text{
+    font-family:'Cormorant Garamond', serif; font-weight:500; font-style:italic;
+    font-size:clamp(2.4rem, 9vw, 4.6rem);
+    line-height:1.15;
+    color:var(--wine);
+    letter-spacing:.01em;
   }
 
-  /* QUIZ */
-  .quiz-card{
-    background:var(--ivory-2); border:1px solid color-mix(in srgb, var(--rose) 45%, transparent);
-    padding:2rem 1.7rem; border-radius:2px; min-height:280px;
-    display:flex; flex-direction:column; justify-content:center;
+  /* GALLERY */
+  .gallery{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:.9rem;
   }
-  .quiz-progress{
-    display:flex; gap:.4rem; justify-content:center; margin-bottom:1.6rem;
+  .gallery img{
+    width:100%; height:220px; object-fit:cover; border-radius:2px;
+    border:1px solid color-mix(in srgb, var(--rose) 45%, transparent);
   }
-  .quiz-progress span{
-    width:6px; height:6px; border-radius:50%; background:color-mix(in srgb, var(--rose) 35%, transparent);
-  }
-  .quiz-progress span.done{ background:var(--rose); }
-  .quiz-q{
-    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.4rem;
-    color:var(--wine); text-align:center; margin-bottom:1.5rem; line-height:1.4;
-  }
-  .quiz-opts{ display:flex; flex-direction:column; gap:.7rem; }
-  .quiz-opt{
-    font-family:'Lato', sans-serif; font-weight:400; font-size:.98rem;
-    background:transparent; color:var(--ink);
-    border:1px solid color-mix(in srgb, var(--rose) 55%, transparent);
-    padding:.75rem 1rem; border-radius:999px; text-align:center;
-    cursor:pointer; transition:all .25s ease;
-  }
-  .quiz-opt:hover{ background:var(--blush); border-color:var(--rose); }
-  .quiz-opt:focus-visible{ outline:2px solid var(--rose); outline-offset:2px; }
-  .quiz-reply{
-    text-align:center; font-family:'Cormorant Garamond', serif; font-style:italic;
-    font-size:1.15rem; color:var(--rose); margin-top:1.3rem; min-height:1.4em;
-  }
-  .quiz-next{
-    display:block; margin:1.5rem auto 0; font-size:.85rem; letter-spacing:.04em;
-    color:var(--gold); background:none; border:none; cursor:pointer;
-    text-decoration:underline; text-underline-offset:3px;
-  }
-  .quiz-final{ text-align:center; }
-  .quiz-final .score{
-    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:2.6rem; color:var(--wine);
-  }
-  .quiz-final p{ margin-top:.8rem; font-size:1rem; line-height:1.7; color:var(--ink); opacity:.85; }
-  .quiz-restart{
-    margin-top:1.4rem; font-size:.85rem; color:var(--gold); background:none; border:none;
-    cursor:pointer; text-decoration:underline; text-underline-offset:3px;
+  .gallery img:first-child{
+    grid-column:1 / -1; height:280px;
   }
 
   /* SEALED NOTE */
@@ -222,3 +175,22 @@
   footer p{ margin-top:.8rem; font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--ink); opacity:.7; font-size:.95rem; }
 
   ::selection{ background:var(--blush); color:var(--wine); }
+
+  /* BENGALI QUOTES */
+  .bn-quotes{ display:flex; flex-direction:column; gap:1.4rem; }
+  .bn-quote{
+    background:var(--ivory-2);
+    border:1px solid color-mix(in srgb, var(--rose) 45%, transparent);
+    border-left:3px solid var(--gold);
+    padding:1.8rem 1.7rem;
+    border-radius:2px;
+  }
+  .bn-quote .bn{
+    font-family:'Noto Serif Bengali', 'Cormorant Garamond', serif;
+    font-weight:500; font-size:1.35rem; line-height:1.9;
+    color:var(--wine);
+  }
+  .bn-quote .gloss{
+    margin-top:.9rem; font-family:'Cormorant Garamond', serif; font-style:italic;
+    font-size:.95rem; color:var(--ink); opacity:.72; line-height:1.6;
+  }
