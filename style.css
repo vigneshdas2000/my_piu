@@ -119,6 +119,9 @@
     font-family:'Cormorant Garamond', serif; font-weight:600; font-style:italic;
     font-size:clamp(2.1rem, 6vw, 2.9rem); color:var(--wine);
   }
+  .section-head h2::before{
+    content:"💗"; display:block; font-size:1.1rem; margin-bottom:.6rem; opacity:.85;
+  }
   .section-head p{
     margin-top:.6rem; font-size:.98rem; color:var(--ink); opacity:.72; max-width:420px;
     margin-left:auto; margin-right:auto; line-height:1.6;
@@ -137,6 +140,9 @@
     line-height:1.15;
     color:var(--wine);
     letter-spacing:.01em;
+  }
+  .statement-hearts{
+    margin-top:1.2rem; font-size:1.3rem; letter-spacing:.4rem; opacity:.85;
   }
 
   /* REVEAL */
@@ -197,6 +203,7 @@
 
   /* SEALED NOTE */
   .seal-wrap{ text-align:center; }
+  .seal-hearts{ font-size:1.3rem; margin-bottom:.8rem; letter-spacing:.5rem; opacity:.85; }
   .envelope{
     width:min(280px, 80vw); margin:0 auto; cursor:pointer; user-select:none;
     display:block; transition:transform .35s ease;
@@ -217,7 +224,7 @@
   footer{
     text-align:center; padding:4rem 1.5rem 5rem; position:relative; z-index:2;
   }
-  footer .heart{ color:var(--rose); font-size:1.1rem; }
+  footer .heart{ color:var(--rose); font-size:1.1rem; letter-spacing:.5rem; }
   footer p{ margin-top:.8rem; font-family:'Cormorant Garamond', serif; font-style:italic; color:var(--ink); opacity:.7; font-size:.95rem; }
 
   ::selection{ background:var(--blush); color:var(--wine); }
@@ -239,4 +246,30 @@
   .bn-quote .gloss{
     margin-top:.9rem; font-family:'Cormorant Garamond', serif; font-style:italic;
     font-size:.95rem; color:var(--ink); opacity:.72; line-height:1.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px){
+    section{ padding:4rem 1.25rem; }
+    .hero{ padding-top:3rem; padding-bottom:3rem; }
+    .section-head{ margin-bottom:2.2rem; }
+    .gallery{ gap:.6rem; }
+    .gallery img{ height:150px; }
+    .gallery img:first-child{ height:200px; }
+    .ask-card{ padding:1.9rem 1.3rem; min-height:220px; }
+    .ask-q{ font-size:1.35rem; }
+    .bn-quote{ padding:1.4rem 1.3rem; }
+    .bn-quote .bn{ font-size:1.15rem; line-height:1.75; }
+    .sealed-msg{ font-size:1.1rem; }
+    .pet-tag{ font-size:.95rem; padding:.3rem .85rem; }
+  }
+  @media (max-width: 360px){
+    .hero h1{ font-size:clamp(2.6rem, 15vw, 4rem); }
+    .gallery{ grid-template-columns:1fr; }
+    .gallery img:first-child{ grid-column:auto; height:180px; }
+    .ask-opts{ gap:.55rem; }
+    .ask-opt{ font-size:.9rem; padding:.65rem .9rem; }
+  }
+  @media (min-width: 900px){
+    section{ max-width:680px; }
   }
